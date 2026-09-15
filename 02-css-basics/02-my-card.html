@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA Player Card</title>
+    <style>
+      body {
+        background-color: #eaf2ec;
+        font-family: Arial, sans-serif;
+      }
+      .card {
+        width: 280px;
+        background-color: white;
+        border: 2px solid #007a33; /* 边框：2像素宽、实线、凯尔特人绿 */
+        padding: 20px; /* 内边距：像气泡垫一样把里面的内容和边框隔开！ */
+        border-radius: 16px; /* 圆角：削圆四个角 */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        margin: 60px auto; /* 核心：上下留白60px，左右自动平分居中！ */
+        text-align: center; /* 核心：卡片里面的所有文字、照片一律水平居中！ */ /* 阴影：卡片立体浮起效果 */
+      }
+      img {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 50%; /* 50% 的圆角会把照片切成一个完美的正圆形！ */
+        border: 3px solid #ffd700; /* 金色的勋章边框 */
+        margin-bottom: 12px; /* 下外边距：把下面的姓名推开一点距离 */
+      }
+      h2 {
+        color: #007a33;
+        margin-bottom: 6px;
+      }
+      p {
+        color: #666666;
+        margin-bottom: 20px;
+      }
+      button {
+        width: 100%; /* 按钮撑满卡片宽度 */
+        background-color: #007a33;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: #005a24;
+      }
+      .card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+      }
+      /* 3. 按压瞬间：当鼠标按下去的一刹那，让按钮微微缩小 3%，像真实按键一样弹！ */
+      button:active {
+        transform: scale(0.97);
+      }
+      /* 1. 数据大底盘：开启 Flex 弹性并排排版！ */
+      .stats {
+        display: flex; /* ⭐ 核心：所有子项目瞬间横向并排！ */
+        justify-content: space-between; /* ⭐ 核心：平均分配左右空间，完美留白！ */
+        background-color: #f4f8f5; /* 浅浅的高级底色 */
+        padding: 10px; /* 内边距 */
+        border-radius: 8px; /* 圆角 */
+        margin-bottom: 20px; /* 把它和下面的按钮推开 20px 间距 */
+      }
+
+      /* 2. 单个数据列：数字在上，英文在下 */
+      .stat-item {
+        display: flex;
+        flex-direction: column; /* column 代表列：让强壮的数字在上，标签在下 */
+      }
+
+      /* 3. 数字大号加粗，绿色 */
+      .stat-item strong {
+        font-size: 18px;
+        color: #ffd700;
+      }
+
+      /* 4. 英文标签小号灰字 */
+      .stat-item span {
+        font-size: 11px;
+        color: #888888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/1628369.png" width="160" />
+      <h2>Jason Tatum</h2>
+      <p>Boston Celtics Forward</p>
+      <!-- 球员场均三大核心数据 -->
+      <div class="stats">
+        <div class="stat-item">
+          <strong>30.1</strong>
+          <span>PTS</span>
+        </div>
+        <div class="stat-item">
+          <strong>8.8</strong>
+          <span>REB</span>
+        </div>
+        <div class="stat-item">
+          <strong>4.6</strong>
+          <span>AST</span>
+        </div>
+      </div>
+      <button>FOLLow Player</button>
+    </div>
+  </body>
+</html>
